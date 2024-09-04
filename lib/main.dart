@@ -31,11 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentPageIndex = 0;
   int _selectedIndex = 0;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
@@ -57,47 +53,22 @@ class _MyHomePageState extends State<MyHomePage> {
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
         // space to fit everything.
-        child: ListView(
+        child: Column(
           // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Home'),
-              selected: _selectedIndex == 0,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(0);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Business'),
-              selected: _selectedIndex == 1,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(1);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('School'),
-              selected: _selectedIndex == 2,
-              onTap: () {
-                // Update the state of the app
-                _onItemTapped(2);
-                // Then close the drawer
-                Navigator.pop(context);
-              },
-            ),
-          ],
+                children: <Widget>[
+                Expanded(
+                  flex: 3,
+                  child: Container(
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+                Expanded(
+                  flex: 7,
+                    child: Container(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                  ),
+                ),
+              ],
         ),
       ),
       bottomNavigationBar: NavigationBar(
