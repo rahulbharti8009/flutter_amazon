@@ -27,3 +27,16 @@ class Logger {
     }
   }
 } 
+
+String getTitleName(int value){
+  switch (value) {
+    case 0:
+      return "Home";
+    case 1: 
+      return "Notification";
+    case 2: 
+      return "Message";
+      default:
+      return "Home";
+  }
+}

@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter demo',
+      title: 'Todo App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 74, 109, 154)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 74, 109, 154)),
         useMaterial3: true,
       ),
       home: const DashboardUI(title: 'Flutter'),
