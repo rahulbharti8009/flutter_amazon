@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 
+
 Column drawer(BuildContext context, currentPageIndex ,{required Function onClick}) { 
    return  Column(
           // Important: Remove any padding from the ListView.
                 children: <Widget>[
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: Container(
                     color: Theme.of(context).colorScheme.secondary,
+                   
+                  ),
+                ),
+                Expanded(
+                  flex: 8,
+                    child: Container(
+                    color: const Color.fromARGB(255, 255, 255, 255),
                     child: ListView(
                       children: [
                             ListTile(
@@ -36,12 +44,6 @@ Column drawer(BuildContext context, currentPageIndex ,{required Function onClick
                             ),
                           ],
                     ),
-                  ),
-                ),
-                Expanded(
-                  flex: 7,
-                    child: Container(
-                    color: const Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
               ],

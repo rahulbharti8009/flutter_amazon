@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_amazon/route/routes.dart';
 import 'package:flutter_amazon/ui/Dashboard/DashboardUI.dart';
 
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 74, 109, 154)),
         useMaterial3: true,
       ),
-      home: const DashboardUI(title: 'Flutter'),
+      home: const Routes(),
     );
   }
 }

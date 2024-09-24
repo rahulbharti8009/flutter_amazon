@@ -4,10 +4,11 @@ import 'package:flutter_amazon/ui/Dashboard/HomeUI.dart';
 import 'package:flutter_amazon/ui/Dashboard/MessageUI.dart';
 import 'package:flutter_amazon/ui/Dashboard/NotificationUI.dart';
 import 'package:flutter_amazon/utils/ExtendFun.dart';
-
+const TAG = "DashboardUI";
 class DashboardUI extends StatefulWidget {
-  const DashboardUI({super.key, required this.title});
-  final String title;
+  final String id;
+
+  const DashboardUI({super.key, required this.id});
   @override
   State<DashboardUI> createState() => DashboardStateUI();
 }
@@ -17,6 +18,7 @@ class DashboardStateUI extends State<DashboardUI> {
 
   @override
   Widget build(BuildContext context) {
+    Logger(TAG).log(widget.id);
     return Scaffold(
       appBar: AppBar(
           title: Text(getTitleName(currentPageIndex)),
@@ -64,7 +66,7 @@ class DashboardStateUI extends State<DashboardUI> {
               label: Text('2'),
               child: Icon(Icons.messenger_sharp)),
             label: 'Messages',
-          ),
+          )
         ],
       ),
       body: <Widget>[
