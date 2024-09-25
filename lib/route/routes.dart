@@ -15,10 +15,10 @@ class _RoutesState extends State<Routes> {
   @override
   Widget build(BuildContext context) {
  return MaterialApp(
-      routes: {
-        '/': (context) => isLogin ?  const LoginUI() : const DashboardUI(id: ''),
-        CONST.dashboardUI: (context) => const DashboardUI(id: ''),
-      },
+          routes: {
+            '/': (context) => isLogin ?  const LoginUI() : const DashboardUI(id: ''),
+            CONST.dashboardUI: (context) => const DashboardUI(id: ''),
+          },
     );  }
 }
 
