@@ -16,11 +16,13 @@ class HomeUI extends StatefulWidget {
 class _HomeUIState extends State<HomeUI> {
 //  late Future<Album> futureAlbum = Future<Album>;
   var apiStatus = "";
+  Album? mEntity;
   onApiStatus(status){
       setState(() {
        apiStatus = status;
       });
   }
+  
   @override
   void initState() {
     super.initState();
@@ -32,7 +34,7 @@ class _HomeUIState extends State<HomeUI> {
       switch(type){
         case Api.connection: 
         Logger(TAG).log(value!);
-        onApiStatus(value);
+        onApiStatus(type.name);
         break;
         case Api.loading: 
         Logger(TAG).log(type.name);
@@ -40,11 +42,14 @@ class _HomeUIState extends State<HomeUI> {
         break;
         case Api.success: 
         Logger(TAG).log(entity!.title);
-        onApiStatus(entity.title);
+        setState(() {
+          mEntity = entity;
+        });
+         onApiStatus(type.name);
         break;
         case Api.failure: 
         Logger(TAG).log(type.name);
-        onApiStatus(value);
+        onApiStatus(type.name);
         break;
         case Api.timeout: 
         Logger(TAG).log(value!);
@@ -57,8 +62,13 @@ class _HomeUIState extends State<HomeUI> {
  
   @override
   Widget build(BuildContext context) {
-
-    return Text(apiStatus);
+     switch(apiStatus){
+       case "connection" : return Text(apiStatus);
+       case "loading" : return Text(apiStatus as String);
+       case "success" : return Text(mEntity!.title);
+       case "failure" : return Text(apiStatus as String);
+      default :  return Text(apiStatus as String);
+    }
     // return  Center(
           // child: FutureBuilder<Album>(
             // future: futureAlbum,

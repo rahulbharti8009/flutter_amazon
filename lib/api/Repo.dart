@@ -32,7 +32,7 @@ void fetchAlbum2(String endPoint, Map request, {required Null Function(Api type,
         api(Api.loading, null, null);
         final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'))
            .timeout(
-              const Duration(seconds: 1),
+              const Duration(seconds: 100000),
                onTimeout: () {
                 api(Api.timeout, null, "Timeout");
                 return http.Response('Error', 408);
