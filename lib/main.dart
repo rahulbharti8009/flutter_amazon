@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_amazon/route/routes.dart';
-import 'package:flutter_amazon/ui/Dashboard/DashboardUI.dart';
 
 
 void main() {

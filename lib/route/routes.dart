@@ -19,7 +19,8 @@ class _RoutesState extends State<Routes> {
             '/': (context) => isLogin ?  const LoginUI() : const DashboardUI(id: ''),
             CONST.dashboardUI: (context) => const DashboardUI(id: ''),
           },
-    );  }
+    );
+  }
 }
 
 void stack(routeName){
